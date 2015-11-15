@@ -2,9 +2,13 @@ package webService.api.rest;
 
 import java.util.HashSet;
 import java.util.Set;
+
 import javax.ws.rs.core.Application;
 
+import webService.api.rest.resources.ChannelTuneApi;
 import webService.api.rest.resources.ExampleApi;
+import webService.api.rest.resources.ProgramWatchedApi;
+import webService.api.rest.resources.PurchaseApi;
 
 
 public class RESTApplication extends Application{
@@ -17,7 +21,10 @@ public class RESTApplication extends Application{
 	@Override
     public Set<Class<?>> getClasses() {
 		Set<Class<?>> serviceClasses = new HashSet<Class<?>>();
-		serviceClasses.add(ExampleApi.class);
+		//serviceClasses.add(ExampleApi.class);
+		serviceClasses.add(PurchaseApi.class);
+		serviceClasses.add(ChannelTuneApi.class);
+		serviceClasses.add(ProgramWatchedApi.class);
 		
 		serviceClasses.add(com.wordnik.swagger.jaxrs.listing.ResourceListingProvider.class);
 		serviceClasses.add(com.wordnik.swagger.jaxrs.json.JacksonJsonProvider.class);

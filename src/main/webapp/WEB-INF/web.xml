@@ -34,7 +34,7 @@
 
   <servlet-mapping>
     <servlet-name>WinkServlet</servlet-name>
-    <url-pattern>/rest/*</url-pattern>
+    <url-pattern>/webpage/rest/*</url-pattern>
   </servlet-mapping>
   
     <servlet>
@@ -51,7 +51,7 @@
 		</init-param>
 		<init-param>
 			<param-name>swagger.api.basepath</param-name>
-			<param-value>/dbcore-service/rest</param-value>
+			<param-value>/webService/webpage/rest</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
   </servlet>
