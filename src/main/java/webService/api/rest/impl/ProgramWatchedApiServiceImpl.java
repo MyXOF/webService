@@ -9,6 +9,7 @@ import org.slf4j.LoggerFactory;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
+import com.corp.tsdb.spark.SparkResultCollector;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -37,7 +38,8 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 					date++;
 					value += 75;
 				}
-
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getProgramWatchedResultTime();
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();
@@ -77,7 +79,8 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 					date++;
 					value += 75;
 				}
-
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getProgramWatchedResultChannelChange();
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();

@@ -9,6 +9,7 @@ import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.corp.tsdb.spark.SparkResultCollector;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -62,7 +63,9 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				result.add(j5);
 				result.add(j6);
 				result.add(j7);
-
+				
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getPurchaseResultByYear();
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();
@@ -127,6 +130,9 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				result.add(j5);
 				result.add(j6);
 				result.add(j7);
+				
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getPurchaseResultBySeason();
 
 			} catch (Exception ex) {
 
@@ -192,6 +198,9 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				result.add(j5);
 				result.add(j6);
 				result.add(j7);
+				
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getPurchaseResultByDay();
 
 			} catch (Exception ex) {
 

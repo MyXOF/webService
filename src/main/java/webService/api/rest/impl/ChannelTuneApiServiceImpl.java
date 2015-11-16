@@ -9,12 +9,13 @@ import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import webService.api.rest.model.ErrorConcise;
 import webService.api.rest.resources.NotFoundException;
 import webService.api.rest.resources.services.ChannelTuneApiService;
+
+import com.corp.tsdb.spark.SparkResultCollector;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @javax.annotation.Generated(value = "class io.swagger.codegen.languages.JaxRSServerCodegen", date = "2015-09-15T17:27:51.281+08:00")
 public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
@@ -24,7 +25,7 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 	public Response channelTuneDeviceOnlineGet() throws NotFoundException {
 		ObjectMapper mapper = new ObjectMapper();
 		logger.debug("ChannelTuneApiServiceImpl Receive Message Post DeviceOnline");
-		try {
+		try {	
 			JSONArray result = new JSONArray();
 			try {
 				
@@ -38,6 +39,8 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 					date++;
 					value += 100;
 				}
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getChannelTuneResultDeviceOnline();
 
 			} catch (Exception ex) {
 
@@ -78,7 +81,8 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 					date++;
 					value += 75;
 				}
-
+//				SparkResultCollector collector = SparkResultCollector.getInstance();
+//				result = collector.getChannelTuneResultChannelWatched();
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();

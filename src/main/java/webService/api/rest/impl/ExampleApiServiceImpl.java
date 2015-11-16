@@ -106,8 +106,6 @@ public class ExampleApiServiceImpl extends ExampleApiService{
 		ObjectMapper mapper = new ObjectMapper();
 		System.out.println("Receive Message Post");
 		try {
-
-			boolean status = false;
 			JSONObject result = new JSONObject();
 			try {
 				result.put("name", "xuyi");
