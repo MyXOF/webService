@@ -47,7 +47,7 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("channelTuneDeviceOnlineGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -55,6 +55,7 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 					.entity(result.toString()).build();
 
 		} catch (JsonProcessingException ex) {
+			logger.error("channelTuneDeviceOnlineGet error",ex);
 			logger.debug(ex.getMessage());
 		}
 
@@ -88,7 +89,7 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("channelTuneChannelWatchedGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -97,6 +98,7 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 
 		} catch (JsonProcessingException ex) {
 			logger.debug(ex.getMessage());
+			logger.error("channelTuneChannelWatchedGet error",ex);
 		}
 
 		JSONObject result = new JSONObject();

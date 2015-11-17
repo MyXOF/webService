@@ -45,7 +45,7 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("programWatchedTimeGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -86,7 +86,7 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("programWatchedChannelChangeGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}

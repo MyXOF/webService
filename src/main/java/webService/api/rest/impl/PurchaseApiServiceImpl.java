@@ -71,7 +71,7 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("purchaseYearGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -80,6 +80,7 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 
 		} catch (JsonProcessingException ex) {
 			logger.debug(ex.getMessage());
+			logger.error("purchaseYearGet error",ex);
 		}
 
 		JSONObject result = new JSONObject();
@@ -133,13 +134,14 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				
 //				SparkResultCollector collector = SparkResultCollector.getInstance();
 //				result = collector.getPurchaseResultBySeason();
+				
 
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("purchaseSeasonGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -148,6 +150,7 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 
 		} catch (JsonProcessingException ex) {
 			logger.debug(ex.getMessage());
+			logger.error("purchaseSeasonGet error",ex);
 		}
 
 		JSONObject result = new JSONObject();
@@ -207,7 +210,7 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 				ErrorConcise err = new ErrorConcise();
 				err.setSuccess(false);
 				err.setReason(ex.getMessage());
-
+				logger.error("purchaseDayGet error",ex);
 				return Response.status(Status.INTERNAL_SERVER_ERROR)
 						.entity(mapper.writeValueAsString(err)).build();
 			}
@@ -216,6 +219,7 @@ public class PurchaseApiServiceImpl extends PurchaseApiService{
 
 		} catch (JsonProcessingException ex) {
 			logger.debug(ex.getMessage());
+			logger.error("purchaseDayGet error",ex);
 		}
 
 		JSONObject result = new JSONObject();
