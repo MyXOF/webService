@@ -1,0 +1,27 @@
+ERROR [2015-11-18 17:04:12,870] webSerivce.service.deamon.DataConfig:85 - DataConfig : failed to read data from TVDataResult/PurchaseResultYear because file does not exist 
+java.io.FileNotFoundException: TVDataResult/PurchaseResultYear (No such file or directory)
+	at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_60-ea]
+	at java.io.FileReader.<init>(FileReader.java:58) ~[na:1.7.0_60-ea]
+	at webSerivce.service.deamon.DataConfig.inputDataFromFile(DataConfig.java:73) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.getJsonArray(DataConfig.java:47) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.main(DataConfig.java:99) [classes/:na]
+ERROR [2015-11-18 17:04:12,881] webSerivce.service.deamon.DataConfig:85 - DataConfig : failed to read data from TVDataResult/PurchaseResultSeason because file does not exist 
+java.io.FileNotFoundException: TVDataResult/PurchaseResultSeason (No such file or directory)
+	at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_60-ea]
+	at java.io.FileReader.<init>(FileReader.java:58) ~[na:1.7.0_60-ea]
+	at webSerivce.service.deamon.DataConfig.inputDataFromFile(DataConfig.java:73) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.getJsonArray(DataConfig.java:47) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.main(DataConfig.java:100) [classes/:na]
+ERROR [2015-11-18 17:04:12,882] webSerivce.service.deamon.DataConfig:85 - DataConfig : failed to read data from TVDataResult/PurchaseResultDay because file does not exist 
+java.io.FileNotFoundException: TVDataResult/PurchaseResultDay (No such file or directory)
+	at java.io.FileInputStream.open(Native Method) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:146) ~[na:1.7.0_60-ea]
+	at java.io.FileInputStream.<init>(FileInputStream.java:101) ~[na:1.7.0_60-ea]
+	at java.io.FileReader.<init>(FileReader.java:58) ~[na:1.7.0_60-ea]
+	at webSerivce.service.deamon.DataConfig.inputDataFromFile(DataConfig.java:73) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.getJsonArray(DataConfig.java:47) [classes/:na]
+	at webSerivce.service.deamon.DataConfig.main(DataConfig.java:101) [classes/:na]

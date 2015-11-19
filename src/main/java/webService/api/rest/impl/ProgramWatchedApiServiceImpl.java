@@ -9,10 +9,10 @@ import org.slf4j.LoggerFactory;
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 
-import com.corp.tsdb.spark.SparkResultCollector;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import webSerivce.service.deamon.DataConfig;
 import webService.api.rest.model.ErrorConcise;
 import webService.api.rest.resources.NotFoundException;
 import webService.api.rest.resources.services.ProgramWatchedApiService;
@@ -28,18 +28,8 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 		try {
 			JSONArray result = new JSONArray();
 			try {			
-				int date = 20150501;
-				int value = 100;
-				for(int i = 0;i < 16;i++){
-					JSONObject json = new JSONObject();
-					json.put("label", date);
-					json.put("value", value);
-					result.add(json);
-					date++;
-					value += 75;
-				}
-//				SparkResultCollector collector = SparkResultCollector.getInstance();
-//				result = collector.getProgramWatchedResultTime();
+				DataConfig config = DataConfig.getInstance();
+				result = config.getJsonArray(config.PWR_T);
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();
@@ -69,18 +59,8 @@ public class ProgramWatchedApiServiceImpl extends ProgramWatchedApiService{
 		try {
 			JSONArray result = new JSONArray();
 			try {
-				int date = 20110203;
-				int value = 100;
-				for(int i = 0;i < 19;i++){
-					JSONObject json = new JSONObject();
-					json.put("label", date);
-					json.put("value", value);
-					result.add(json);
-					date++;
-					value += 75;
-				}
-//				SparkResultCollector collector = SparkResultCollector.getInstance();
-//				result = collector.getProgramWatchedResultChannelChange();
+				DataConfig config = DataConfig.getInstance();
+				result = config.getJsonArray(config.PWR_CC);
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();

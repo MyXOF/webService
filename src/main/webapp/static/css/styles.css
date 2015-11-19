@@ -863,6 +863,13 @@ h1.page-header {
 }
 
 
+/*
+ * define by Xu Yi
+*/
+
+.panel-body li{
+	background: #eeeeee;
+}
 .page-turn{
 	position: relative;
 	margin:0 auto;

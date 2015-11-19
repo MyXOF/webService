@@ -3,6 +3,7 @@
 	<name>webService</name>
 	<comment></comment>
 	<projects>
+		<project>spark-hadoop-tool</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

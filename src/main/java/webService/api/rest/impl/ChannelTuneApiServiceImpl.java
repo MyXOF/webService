@@ -9,11 +9,11 @@ import net.sf.json.JSONObject;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import webSerivce.service.deamon.DataConfig;
 import webService.api.rest.model.ErrorConcise;
 import webService.api.rest.resources.NotFoundException;
 import webService.api.rest.resources.services.ChannelTuneApiService;
 
-import com.corp.tsdb.spark.SparkResultCollector;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -29,18 +29,8 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 			JSONArray result = new JSONArray();
 			try {
 				
-				int date = 20150101;
-				int value = 100;
-				for(int i = 0;i < 11;i++){
-					JSONObject json = new JSONObject();
-					json.put("label", date);
-					json.put("value", value);
-					result.add(json);
-					date++;
-					value += 100;
-				}
-//				SparkResultCollector collector = SparkResultCollector.getInstance();
-//				result = collector.getChannelTuneResultDeviceOnline();
+				DataConfig config = DataConfig.getInstance();
+				result = config.getJsonArray(config.CTR_DO);
 
 			} catch (Exception ex) {
 
@@ -72,18 +62,8 @@ public class ChannelTuneApiServiceImpl extends ChannelTuneApiService{
 		try {
 			JSONArray result = new JSONArray();
 			try {
-				int date = 20150201;
-				int value = 100;
-				for(int i = 0;i < 16;i++){
-					JSONObject json = new JSONObject();
-					json.put("label", date);
-					json.put("value", value);
-					result.add(json);
-					date++;
-					value += 75;
-				}
-//				SparkResultCollector collector = SparkResultCollector.getInstance();
-//				result = collector.getChannelTuneResultChannelWatched();
+				DataConfig config = DataConfig.getInstance();
+				result = config.getJsonArray(config.CTR_CW);
 			} catch (Exception ex) {
 
 				ErrorConcise err = new ErrorConcise();

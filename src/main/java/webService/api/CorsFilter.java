@@ -11,7 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletResponse;
 
 public class CorsFilter implements Filter{
-	@Override
     public void doFilter(ServletRequest request, ServletResponse response,
     FilterChain filterChain) throws IOException, ServletException {
 
@@ -30,9 +29,7 @@ public class CorsFilter implements Filter{
         response.addHeader("Access-Control-Allow-Headers", "X-PINGOTHER, Origin, X-Requested-With, Content-Type, Accept");
         response.addHeader("Access-Control-Max-Age", "1728000");
     }
-    @Override
     public void destroy() {}
 
-    @Override
     public void init(FilterConfig filterConfig)throws ServletException{}
 }

@@ -3,7 +3,7 @@
  */
 
 var currentChartData;
-var dataColumMax = 3;
+var dataColumMax = 10;
 var indexBegin = 0;
 var indexCurrent = 0;
 var indexEnd;
@@ -61,7 +61,7 @@ function getChartDataRange(index){
 function showChart(charData){
     FusionCharts.ready(function(){
         var revenueChart = new FusionCharts({
-            "type": "column2d",
+            "type": "column3d",
             "renderAt": "chartContainer",
             "width": $("#columContainer").width() * 0.95,
             "height": 500,

@@ -34,6 +34,5 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="src" path="/spark-hadoop-tool"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
